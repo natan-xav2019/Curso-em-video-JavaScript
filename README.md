@@ -74,7 +74,7 @@ Podemos ver que e um pouco confuso esse abre e fecha aspas por isso existe outra
 #### Manipulando Strings
 
 - `.length`: retorna a quantidade de caracteres da String.
-- `.toUpperCase()`: String retorna em maiscula.
+- `.toUpperCase()`: String retorna em maiuscula.
 - `.toLowerCase()`: String retorna em minuscula.
 
 
