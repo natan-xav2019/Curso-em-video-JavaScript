@@ -81,5 +81,5 @@ Podemos ver que e um pouco confuso esse abre e fecha aspas por isso existe outra
 ### Manipulando Number
 
 - `.toFixed(n)`: vai dizer quantas casas depois da virgula vc quer na variavel n.
-- `replace('n','m'): vai trocar uma coisa por outra no caso trocar n por m.
+- `replace('n','m')`: vai trocar uma coisa por outra no caso trocar n por m.
   
