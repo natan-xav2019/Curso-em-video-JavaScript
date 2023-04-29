@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>No Brasil você e?</h1>
+    De qual pais você e? <input type="text" name="country" id="country">
+    <input id="send" type="button" value="enviar">
+    <div id="response">
+
+    </div>
+
+    <script>
+        const country = window.document.querySelector("input#country")
+        const response = window.document.querySelector("div#response")
+        const send = window.document.querySelector("input#send") 
+
+        send.addEventListener('click',isTourist)
+
+        function isTourist() {
+            if (country.value == "Brasil") {
+                response.innerHTML = "Voce é Brasilerio.";
+            } else
+                response.innerHTML = "Voce é turista.";
+        }
+        
+    </script>
+</body>
+</html>
