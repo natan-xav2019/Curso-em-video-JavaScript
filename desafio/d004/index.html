@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo Troco</title>
+    <style>
+        input[type=button] {
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Calculando o Troco</h1>
+    <input onclick="CalculoTroco()" type="button" value="Comprar produto">
+    <script>
+        function CalculoTroco() {
+            var produto = window.prompt("Que produto você está coomprando?")
+            var ProdutoValor = Number(window.prompt(`Quanto custa ${produto} que você está comprando?`))
+            var dinheiro = Number(window.prompt(`Qual foi o valor que você deu para pagar ${produto}?`))
+
+            var troco = dinheiro - ProdutoValor;
+
+            var ProdutoValorString = ProdutoValor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+            var dinheiroString = dinheiro.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+            var trocoString = troco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+
+            if (troco > 0) {
+                window.alert(`Você comprou ${produto} que custou ${ProdutoValorString}.\nDeu ${dinheiroString} em dinheiro e vai receber ${trocoString} de troco.\nVolte Sempre!`)
+            }
+            else if (troco == 0) {
+                window.alert(`Você comprou ${produto} que custou ${ProdutoValorString}.\nDeu ${dinheiroString} em dinheiro e não precisa receber Troco.`)
+            }
+            else {
+                window.alert(`Desculpa não foi possivel comprar ${produto} pois você pagou menos do que devia.`)
+            }
+        }
+    </script>
+</body>
+
+</html>
