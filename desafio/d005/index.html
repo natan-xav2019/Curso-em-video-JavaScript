@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Medidas</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1, h2 {
+            font-weight: 800;
+        }
+        input[type='button'] {
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Conversor de Medidas</h1>
+    <input type="button" onclick="conversor()" value="Converter">
+    <div id="res">
+
+    </div>
+    <script>
+        function conversor() {
+            var res = window.document.querySelector("div#res")
+            var metro = Number(window.prompt('Digite uma distância em metros (m)'))
+
+            res.innerHTML = `<h2>A distância de ${metro.toString().replace('.', ',')} metros, corresponde a...</h2>`
+
+            res.innerHTML += `<p>${(metro / 1000).toLocaleString('pt-BR', { style: 'decimal', minimumFractionDigits: 0, maximumFractionDigits: 3 })} Quilômetros (Km)</p>`
+            res.innerHTML += `<p>${(metro / 100).toLocaleString('pt-BR', { style: 'decimal', minimumFractionDigits: 0, maximumFractionDigits: 3 })} Hectômetros (Hm)</p>`
+            res.innerHTML += `<p>${(metro / 10).toLocaleString('pt-BR', { style: 'decimal', minimumFractionDigits: 0, maximumFractionDigits: 3 })} Decâmetros (Dam)</p>`
+            res.innerHTML += `<p>${(metro * 10).toLocaleString('pt-BR', { style: 'decimal', minimumFractionDigits: 0, maximumFractionDigits: 3 })} Decímetros (dm)</p>`
+            res.innerHTML += `<p>${(metro * 100).toLocaleString('pt-BR', { style: 'decimal', minimumFractionDigits: 0, maximumFractionDigits: 3 })} Centímetros (cm)</p>`
+            res.innerHTML += `<p>${(metro * 1000).toLocaleString('pt-BR', { style: 'decimal', minimumFractionDigits: 0, maximumFractionDigits: 3 })} minímetros (mm)</p>`
+        }
+    </script>
+</body>
+
+</html>
