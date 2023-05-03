@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Temperatura</title>
+</head>
+<body>
+    <h1>Conversor de Temperaturas</h1>
+    <input onclick="ConversorTemperatura()" type="button" value="Converter">
+    <p>clique no botão acima para iniciar</p>
+    <div id="res"></div>
+    <script>
+        function ConversorTemperatura() {
+            var celsius = Number(window.prompt("Digite uma temperatura em °C (Celsius)"))
+            var res = window.document.getElementById("res")
+            var  fahrenheit = celsius * 9 / 5 + 32
+            var kelvin = celsius + 273.15
+
+            res.innerHTML = `<h1>A temperatura de ${celsius.toLocaleString('pt-BR', { style: 'decimal', minimumFractionDigits: 0, maximumFractionDigits: 2 })}°C, corresponde a..</h1>`
+            res.innerHTML  += `<p>${kelvin.toLocaleString('pt-BR', { style: 'decimal', minimumFractionDigits: 0, maximumFractionDigits: 2 })}°K (Kelvin)</p>`
+            res.innerHTML  += `<p>${fahrenheit.toLocaleString('pt-BR', { style: 'decimal', minimumFractionDigits: 0, maximumFractionDigits: 2 })}°F (Fahrenheit)</p>`
+        }
+    </script>
+</body>
+</html>
