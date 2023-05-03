@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor R$ -> USS</title>
+    <style>
+        input[type=button] {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body onload="cotasaoDolarDia()">
+    <h1>Conversor R$ -> UR$</h1>
+    <input onclick="conversorRealParaDolar()" type="button" value="Converter">
+    <p>Clique no botão acima para iniciar</p>
+    <div id="res">
+
+    </div>
+    <script>
+        var cotasaoDolar
+        function cotasaoDolarDia() {
+            cotasaoDolar = Number(window.prompt("Antes de mais nada. Quanto está a cotação do dólar agora?"))
+        }
+
+        function conversorRealParaDolar() {
+            if(cotasaoDolar != 0) {
+                var reais = Number(window.prompt(" Quantos R$ Você tem na carteira?"))
+                var res = window.document.querySelector("div#res")
+                var dolar = reais / cotasaoDolar
+                
+                reais = reais.toLocaleString('pt-BR', { style: 'currency', currency: "BRL" })
+                dolar = dolar.toLocaleString("en-US", { style: 'currency', currency: "USD" })
+
+                res.innerHTML = `<p>Você tem ${reais} convertendo para dolar temos ${dolar}.</p>`
+                
+            } else {
+                window.alert("NÃO PODE TER 0 COMO COTAÇÃO!")
+            }
+        }
+    </script>
+</body>
+</html>
