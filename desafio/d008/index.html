@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo do Desconto</title>
+    <style>
+        button {
+            padding: 15px 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calcular Desconto</h1>
+    <button type="button">Desconto de 10%</button>
+    <p>Clique no botão acima para iniciar</p>
+    <div id="res">
+
+    </div>
+    <script>
+        var botao = document.querySelector("button")
+        botao.addEventListener("click",desconto)
+        function desconto() {
+            const DESCONTO = 0.10
+            var produto = window.prompt("Qual e o o produto que esta dentro comprado?")
+            var res = window.document.querySelector("div#res")
+            var preso = Number(window.prompt(`Quanto custa ${produto}?`))
+            
+            var presoDesconto = preso*DESCONTO
+            var novoPreso = preso - presoDesconto
+            
+           preso = preso.toLocaleString('pt-BR', { style: 'currency', currency: "BRL" })
+            novoPreso = novoPreso.toLocaleString('pt-BR', { style: 'currency', currency: "BRL" })
+            res.innerHTML = `<p>O Preço original era ${preso}.</p>`
+            res.innerHTML += `<p>Voce acaba de ganhar ${presoDesconto.toLocaleString('pt-BR', { style: 'currency', currency: "BRL" })} desconto de (-10%).</p>`
+            res.innerHTML += `<p>No fim você paga ${novoPreso} no produto ${produto}</p>`
+        }
+
+    </script>
+</body>
+</html>
