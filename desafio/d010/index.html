@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fórmula de Bhaskara</title>
+    <style>
+        input[type=button] {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Resolvendo Bhaskara</h1>
+    <input onclick="bhaskara()" type="button" value="Calcular">
+    <div id="res">
+        <p>considerando uma equação no formato <em><strong>ax² + bx + c</strong> = 0</em>, aperte o botão acima para calcular o valor de △.</p>
+    </div>
+    <script>
+        function bhaskara() {
+            const res = document.getElementById("res")
+
+            var a = Number(window.prompt("Qual é o valor de a?"))
+            var b = Number(window.prompt("Qual é o valor de b?"))
+            var c = Number(window.prompt("Qual é o valor de c?"))
+
+            var delta = Math.pow(b,2) - 4 * a * c
+
+            res.innerHTML = `<p>A equação atual é  <strong>${a}x² + ${b}x + ${c} = 0</strong></p>`
+            res.innerHTML += `<p>O Cálculo realizado será <strong>△ = ${b}² - 4 . ${a} . ${c}</strong></p>`
+            res.innerHTML += `<p>O valor calculado foi <strong>△ = ${delta}</strong></p>`
+        }
+
+
+    </script>
+</body>
+</html>
